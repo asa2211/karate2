@@ -10,6 +10,7 @@ class AllTrenerView(generics.ListCreateAPIView):
     queryset = TrenerModel.objects.all()
     serializer_class = TrenerSerializer
     pagination_class = PageNumberPagination
+    permission_classes = (AdminPermission,)
 
 
 class TrenerView(generics.RetrieveUpdateDestroyAPIView):
